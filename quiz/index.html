@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizzer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <form id="quiz-form" class="quiz-form">
+        <label for="no-of-questions"
+          >Number of questions:
+          <input
+            type="number"
+            name="no-of-questions"
+            id="no-of-questions"
+            required
+            class="quiz-form-input"
+          />
+        </label>
+
+        <label for="quiz-category"
+          >Select category:
+          <select
+            name="quiz-category"
+            id="quiz-category"
+            required
+            class="quiz-form-input"
+          >
+            <!-- will be added by js -->
+          </select>
+        </label>
+
+        <label for="quiz-difficulty"
+          >Select difficulty:
+          <select
+            name="quiz-difficulty"
+            id="quiz-difficulty"
+            required
+            class="quiz-form-input"
+          >
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+
+        <button type="submit">Start Quiz</button>
+      </form>
+
+      <div class="quiz-container hidden" id="quiz-container">
+        <p class="question-numbers">
+          Question: <span id="current-question-number"></span> of
+          <span id="total-number-of-questions"></span>
+        </p>
+        <h2 id="question-text"><!--Ques will appear here--></h2>
+        <form id="quiz-option-form" class="quiz-option-form">
+          <label for="option-1-input" class="option-form-inputs"
+            ><input type="radio" name="option" id="option-1-input" />
+            <span id="option-1-text"></span>
+          </label>
+          <label for="option-2-input" class="option-form-inputs"
+            ><input type="radio" name="option" id="option-2-input" /><span
+              id="option-2-text"
+            ></span
+          ></label>
+          <label for="option-3-input" class="option-form-inputs"
+            ><input type="radio" name="option" id="option-3-input" /><span
+              id="option-3-text"
+            ></span
+          ></label>
+          <label for="option-4-input" class="option-form-inputs"
+            ><input type="radio" name="option" id="option-4-input" /><span
+              id="option-4-text"
+            ></span
+          ></label>
+          <button type="submit" class="hidden" id="next-btn">
+            Next Question
+          </button>
+        </form>
+      </div>
+
+      <div class="result-container hidden" id="result-container">
+        <p>Score: <span id="total-score"></span></p>
+        <p>Total questions: <span id="total-questions"></span></p>
+        <p>Percentage: <span id="percentage"></span></p>
+        <p>Review: <span id="review"></span></p>
+        <button type="button" id="play-again-btn">Play again</button>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
